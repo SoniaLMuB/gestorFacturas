@@ -61,7 +61,6 @@
             <a href="/crear-cuenta" class="bg-blue-500 hover:bg-sky-500 transition-colors px-4 py-3 rounded-full border border-[#F0F0F6] shadow-xl mt-4 font-bold text-center text-white">Registrate</a>
         </div> --}}
     </div>
-    <br>
 </div>
   
     

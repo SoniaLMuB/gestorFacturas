@@ -12,7 +12,17 @@
     @stack('styles')
     @vite ('resources/css/app.css')
     @vite('resources/js/app.js')
-    
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+        .font-family-karla { font-family: karla; }
+        .bg-sidebar { background: #9147B2; }
+        .cta-btn { color: #924DB0; }
+        .upgrade-btn { background: #924DB0; }
+        .upgrade-btn:hover { background: #924DB0; }
+        .active-nav-link { background: #924DB0; }
+        .nav-item:hover { background: #872DAF; }
+        .account-link:hover { background: #924DB0; }
+    </style>
 
 </head>
 <body class="bg-gray-100 antialiased">
@@ -26,15 +36,17 @@
             </a> --}}
             <!--Aplicar Helper para verificar si esta autenticado-->
             @auth
-                <a href="#" class="text-3xl font-black">Gestor de Facturas</a>
+                <a href="{{route('post.index')}}" class="text-2xl font-black">Gestor de Facturas</a>
                 <!--Vinculo botón de publicar Post-->
                 
                 <!--p>Autenticado</p-->
                 <nav class="flex gap-2 items-center font-bold">
-                    Hola: 
+                    <a href="{{ route('emisora.index')}}" class=" text-teal-500 font-bold">Registrar Empresa Emisora</a>
+                    <a href="#" class=" text-teal-500 font-bold">Registrar Empresa Receptora</a>
+                    {{-- Hola: 
                     <span class="font-normal">
-                        {{-- {{auth()->user()->username}} --}}
-                    </span>
+                        {{auth()->user()->username}} 
+                    </span> --}}
                     <!--Agregar seguridad logut---------------------------------------------------------------->
                     <form method="POST"action="#">
                         @csrf
@@ -49,7 +61,8 @@
                 <a href="#" class="text-3xl font-black">Gestor de Facturas</a>
                 <!--Navegacion -->
                 <nav class="flex gap-2 item-ceter">
-                     <a class="font-bold uppercase text-gray-900 text-sm" href="{{route('login')}}">Login</a>
+                    <a class="font-bold uppercase text-gray-900 text-sm" href="#">Generar factura</a> 
+                    <a class="font-bold uppercase text-gray-900 text-sm" href="{{route('login')}}">Login</a>
                     {{--<a class="font-bold uppercase text-gray-600 text-sm" href="{{route('register')}}">Crear cuenta</a> --}}
                 </nav>
             @endguest
@@ -57,7 +70,7 @@
         </div>
     </header>
     <!--Contenido para cada una de las vistas-->
-    <main class="container mx-auto mt-10">
+    <main class="container mx-auto ">
         <h2 class="font-black text-center text-3xl  bg-pink-100">
             @yield('titulo')
         </h2>
