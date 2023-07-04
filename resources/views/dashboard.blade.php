@@ -45,102 +45,73 @@
         </div>
     </div> --}}
     <!-- component -->
-    <br>
+    <div class="flex justify-center  " >
+        <br>
+        <section x-data="xData()" class="bg-pinkS-100 py-10 px-12 ">
+            <!-- Card Grid -->
+            <div
+                class="grid grid-flow-row gap-8 text-neutral-600 justify-center items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+                <template x-for="post in posts">
+                    <!-- Card Item -->
+                    <div
+                        class="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-pink-200 bg-white dark:bg-pink-100 duration-300 hover:-translate-y-1"
+                        x-for="(post, index) in posts">
+                        <!-- Clickable Area -->
+                        <a :href="post.link" class="cursor-pointer">
+                            <figure>
+                                <!-- Image -->
+                                <img
+                                    :src="post.image + '?auto=format&fit=crop&w=400&q=50'"
+                                    class="rounded-t h-72 w-full object-cover" />
+    
+                                <figcaption class="p-4">
+                                    <!-- Title -->
+                                    <p
+                                        class="text-lg mb-4 font-bold leading-relaxed text-center text-gray-900 dark:text-gray-900"
+                                        x-text="post.title">
+                                        <!-- Post Title -->
+                                    </p>
+    
+                                    {{-- <!-- Description -->
+                                    <small
+                                        class="leading-5 text-gray-500 dark:text-gray-400"
+                                        x-text="post.description">
+                                        <!-- Post Description -->
+                                    </small> --}}
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </template>
+            <br>
+            
+        </section>
+    </div>
     <!-- Card List Section -->
-    <section x-data="xData()" class="bg-pinkS-100 py-10 px-12">
-        <!-- Card Grid -->
-        <div
-            class="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <template x-for="post in posts">
-                <!-- Card Item -->
-                <div
-                    class="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-pink-200 bg-white dark:bg-pink-100 duration-300 hover:-translate-y-1"
-                    x-for="(post, index) in posts">
-                    <!-- Clickable Area -->
-                    <a :href="post.link" class="cursor-pointer">
-                        <figure>
-                            <!-- Image -->
-                            <img
-                                :src="post.image + '?auto=format&fit=crop&w=400&q=50'"
-                                class="rounded-t h-72 w-full object-cover" />
-
-                            <figcaption class="p-4">
-                                <!-- Title -->
-                                <p
-                                    class="text-lg mb-4 font-bold leading-relaxed text-gray-900 dark:text-gray-900"
-                                    x-text="post.title">
-                                    <!-- Post Title -->
-                                </p>
-
-                                {{-- <!-- Description -->
-                                <small
-                                    class="leading-5 text-gray-500 dark:text-gray-400"
-                                    x-text="post.description">
-                                    <!-- Post Description -->
-                                </small> --}}
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-            </template>
-        </div>
-        <br>
-        <br>
-    </section>
+    
 
     <script>
         function xData() {
-            /**
-             * Shuffle an array
-             * @param {Array} array
-             * @source https://stackoverflow.com/a/2450976/6940144
-             */
-            function shuffle(array) {
-                let currentIndex = array.length,
-                    randomIndex;
-
-                // While there remain elements to shuffle.
-                while (currentIndex != 0) {
-                    // Pick a remaining element.
-                    randomIndex = Math.floor(Math.random() * currentIndex);
-                    currentIndex--;
-
-                    // And swap it with the current element.
-                    [array[currentIndex], array[randomIndex]] = [
-                        array[randomIndex],
-                        array[currentIndex],
-                    ];
-                }
-
-                return array;
-            }
-
+            
             const posts = [
                 {
                     image:
-                        "https://static.vecteezy.com/system/resources/previews/006/584/834/non_2x/illustration-graphic-cartoon-character-of-online-shopping-vector.jpg",
-                    title: "Registrar Empresa emisora",
-                    link:"{{ route('emisora.index')}}"
-                    
-                },
-                {
-                    image:
-                        "https://images.unsplash.com/photo-1445077100181-a33e9ac94db0",
-                    title: "Ver Empresa Emisoras ",
+                        "{{asset('imgs/emisora.jpg')}}",
+                    title: "Empresa emisora",
                     link:"{{ route('emisora.show')}}"
                     
                 },
                 {
                     image:
-                        "https://static.vecteezy.com/system/resources/previews/006/511/808/non_2x/illustration-graphic-cartoon-character-of-small-business-free-vector.jpg",
-                    title: "Registrar Empresa Receptora",
-                    link:"{{ route('receptora.index')}}"
+                        "{{asset('imgs/facturasVer.jpg')}}",
+                    title: "Facturas",
+                    link:"{{ route('receptora.show')}}"
                     
                 },
                 {
                     image:
-                        "https://images.unsplash.com/photo-1445077100181-a33e9ac94db0",
-                    title: "Ver Empresa Receptoras",
+                        "{{asset('imgs/receptora.jpg')}}",
+                    title: "Empresa Receptora",
                     link:"{{ route('receptora.show')}}"
                     
                 }

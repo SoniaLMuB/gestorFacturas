@@ -14,7 +14,7 @@
         <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white" style="width: 24rem; height: 32rem;">
             <div class="w-72">
             <!-- Heading -->
-            <h1 class="text-xl font-semibold">Registro de la empresa emisora</h1>
+            <h1 class="text-xl font-semibold">Registro de la empresa Receptora</h1>
             <small class="text-gray-400">Por favor ingresa los datos!</small>
     
             <!-- Form -->
@@ -30,7 +30,7 @@
                     
                     <div  class="mb-5">
                         <!--Usuario-->
-                        <label for="nombre" class="mb-2 block uppercase text-gray-500 font-bold">Razón Social</label>
+                        <label for="nombre" class="mb-2 block  text-gray-500 font-bold">Nombre</label>
                         <input id="nombre" name="nombre" type="text" placeholder="ingresa el nombre de la empresa" class="border p-3 w-full rounded-lg
                         @error('nombre') border-red-500  @enderror"
                         value="{{old('nombre')}}">
@@ -38,7 +38,7 @@
 
                     <div  class="mb-5">
                         <!--Usuario-->
-                        <label for="direccion" class="mb-2 block uppercase text-gray-500 font-bold">Razón Social</label>
+                        <label for="direccion" class="mb-2 block  text-gray-500 font-bold">Dirección</label>
                         <input id="direccion" name="direccion" type="text" placeholder="ingresa direccion de la empresa" class="border p-3 w-full rounded-lg
                         @error('direccion') border-red-500  @enderror"
                         value="{{old('direccion')}}">
@@ -54,7 +54,7 @@
 
                     <div  class="mb-5">
                         <!--Usuario-->
-                        <label for="contacto" class="mb-2 block uppercase text-gray-500 font-bold">RFC</label>
+                        <label for="contacto" class="mb-2 block uppercase text-gray-500 font-bold">Contacto</label>
                         <input id="contacto" name="contacto" type="text" placeholder="Ingresa el contacto de la empresa" class="border p-3 w-full rounded-lg
                         @error('contacto') border-red-500  @enderror"
                         value="{{old('contacto')}}">
@@ -72,7 +72,7 @@
                     
                     
 
-                    <input type="submit" value="Login" class="bg-pink-300 hover:bg-pink-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"> 
+                    <input type="submit" value="Registrar" class="bg-pink-300 hover:bg-pink-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"> 
                 </form>
             
             </div>
